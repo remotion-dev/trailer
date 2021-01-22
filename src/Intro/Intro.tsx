@@ -32,7 +32,7 @@ const Text = styled.span`
 
 export const Intro: React.FC = () => {
 	const frame = useCurrentFrame();
-	const {fps, width, height} = useVideoConfig();
+	const {fps, width, height, durationInFrames} = useVideoConfig();
 	const scaleProgress = spring({
 		fps,
 		frame,
@@ -84,8 +84,14 @@ export const Intro: React.FC = () => {
 		</>
 	);
 
+	const opacity = interpolate(
+		frame,
+		[durationInFrames - 10, durationInFrames],
+		[1, 0]
+	);
+
 	return (
-		<Container style={{transform: `scale(${scale})`}}>
+		<Container style={{transform: `scale(${scale})`, opacity}}>
 			<ZIndex1>{text}</ZIndex1>
 			<svg
 				style={{

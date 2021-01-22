@@ -15,7 +15,7 @@ const Introducing = styled.div`
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	color: white;
 	font-size: 120px;
-	font-weight: 500;
+	font-weight: 700;
 `;
 
 const Title = styled.div`
@@ -30,7 +30,7 @@ const textStart = 85;
 export const Logo: React.FC = () => {
 	const {fps, width, height} = useVideoConfig();
 	const frame = useCurrentFrame();
-	const blueOpacity = interpolate(frame, [0, 20], [0, 1], {
+	const blueOpacity = interpolate(frame, [0, 5], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
 	const textOpacity = interpolate(

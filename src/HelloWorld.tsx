@@ -16,10 +16,10 @@ export const HelloWorld: React.FC = () => {
 				<Sequence from={0} durationInFrames={5 * 30}>
 					<Intro />
 				</Sequence>
-				<Sequence from={600} durationInFrames={165}>
+				<Sequence from={600} durationInFrames={150}>
 					<Logo />
 				</Sequence>
-				<Sequence from={765} durationInFrames={165}>
+				<Sequence from={750} durationInFrames={180}>
 					<CodeFrame
 						title="Video.tsx"
 						code={`
@@ -40,19 +40,19 @@ export const RemotionVideo = () => {
 						timing={[
 							{
 								line: 5,
-								from: 35,
+								from: 50,
 							},
 							{
 								line: 6,
-								from: 60,
+								from: 75,
 							},
 							{
 								line: 7,
-								from: 95,
+								from: 110,
 							},
 							{
 								line: 8,
-								from: 100,
+								from: 115,
 							},
 						]}
 					/>
