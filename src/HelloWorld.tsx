@@ -3,6 +3,7 @@ import {CodeFrame} from './CodeFrame';
 import {FastRefreshDemo} from './FastRefreshDemo';
 import {Fork} from './Fork';
 import {GoToGithub} from './GoToGithub';
+import {InspectAndRefactor} from './InspectAndRefactor';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
@@ -21,10 +22,13 @@ export const HelloWorld: React.FC = () => {
 				<Sequence from={135} durationInFrames={60}>
 					<GoToGithub />
 				</Sequence>
-				<Sequence from={195} durationInFrames={60}>
+				<Sequence from={195} durationInFrames={40}>
 					<Fork />
 				</Sequence>
-				<Sequence from={600} durationInFrames={150}>
+				<Sequence from={235} durationInFrames={70}>
+					<InspectAndRefactor />
+				</Sequence>
+				<Sequence from={580} durationInFrames={170}>
 					<Logo />
 				</Sequence>
 				<Sequence from={750} durationInFrames={180}>

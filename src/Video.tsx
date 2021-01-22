@@ -4,6 +4,7 @@ import {FastRefreshDemo} from './FastRefreshDemo';
 import {Fork} from './Fork';
 import {GoToGithub} from './GoToGithub';
 import {HelloWorld} from './HelloWorld';
+import {InspectAndRefactor} from './InspectAndRefactor';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
@@ -111,6 +112,14 @@ export const RemotionVideo = () => {
 				fps={30}
 				durationInFrames={6 * 30}
 				id="Fork"
+			/>
+			<Composition
+				component={InspectAndRefactor}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={6 * 30}
+				id="Inspect"
 			/>
 		</>
 	);
