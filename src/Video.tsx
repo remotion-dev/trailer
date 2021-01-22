@@ -1,6 +1,7 @@
 import {Composition} from 'remotion';
 import {CodeFrame} from './CodeFrame';
 import {FastRefreshDemo} from './FastRefreshDemo';
+import {GoToGithub} from './GoToGithub';
 import {HelloWorld} from './HelloWorld';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
@@ -93,6 +94,14 @@ export const RemotionVideo = () => {
 				fps={30}
 				durationInFrames={6 * 30}
 				id="Logo"
+			/>
+			<Composition
+				component={GoToGithub}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={6 * 30}
+				id="GoToGithub"
 			/>
 		</>
 	);

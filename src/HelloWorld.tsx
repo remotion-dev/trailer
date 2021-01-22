@@ -1,6 +1,7 @@
 import {Audio, Sequence, useCurrentFrame} from 'remotion';
 import {CodeFrame} from './CodeFrame';
 import {FastRefreshDemo} from './FastRefreshDemo';
+import {GoToGithub} from './GoToGithub';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
@@ -13,8 +14,11 @@ export const HelloWorld: React.FC = () => {
 	return (
 		<div style={{flex: 1, backgroundColor: 'white'}}>
 			<div>
-				<Sequence from={0} durationInFrames={5 * 30}>
+				<Sequence from={0} durationInFrames={4.5 * 30}>
 					<Intro />
+				</Sequence>
+				<Sequence from={4.5 * 30} durationInFrames={60}>
+					<GoToGithub />
 				</Sequence>
 				<Sequence from={600} durationInFrames={150}>
 					<Logo />
