@@ -3,9 +3,11 @@ import {CodeFrame} from './CodeFrame';
 import {FastRefreshDemo} from './FastRefreshDemo';
 import {Fork} from './Fork';
 import {GoToGithub} from './GoToGithub';
+import {Howto} from './HowTo';
 import {InspectAndRefactor} from './InspectAndRefactor';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
+import {PullRequest} from './PullRequest';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
 import voiceover from './voiceover.mp3';
 import {WebTechnologies} from './WebTechnologies';
@@ -28,9 +30,19 @@ export const HelloWorld: React.FC = () => {
 				<Sequence from={235} durationInFrames={70}>
 					<InspectAndRefactor />
 				</Sequence>
+				<Sequence from={305} durationInFrames={70}>
+					<PullRequest />
+				</Sequence>
+				<Sequence from={375} durationInFrames={135}>
+					<Intro />
+				</Sequence>
+				<Sequence from={510} durationInFrames={70}>
+					<Howto />
+				</Sequence>
 				<Sequence from={580} durationInFrames={170}>
 					<Logo />
 				</Sequence>
+
 				<Sequence from={750} durationInFrames={180}>
 					<CodeFrame
 						title="Video.tsx"
