@@ -2,6 +2,7 @@ import {Audio, Sequence, useCurrentFrame} from 'remotion';
 import {CodeFrame} from './CodeFrame';
 import {FastRefreshDemo} from './FastRefreshDemo';
 import {Intro} from './Intro/Intro';
+import {Logo} from './Logo/Logo';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
 import voiceover from './voiceover.mp3';
 import {WebTechnologies} from './WebTechnologies';
@@ -15,7 +16,10 @@ export const HelloWorld: React.FC = () => {
 				<Sequence from={0} durationInFrames={5 * 30}>
 					<Intro />
 				</Sequence>
-				<Sequence from={800} durationInFrames={130}>
+				<Sequence from={600} durationInFrames={165}>
+					<Logo />
+				</Sequence>
+				<Sequence from={765} durationInFrames={165}>
 					<CodeFrame
 						title="Video.tsx"
 						code={`
@@ -36,19 +40,19 @@ export const RemotionVideo = () => {
 						timing={[
 							{
 								line: 5,
-								from: 0,
+								from: 35,
 							},
 							{
 								line: 6,
-								from: 25,
-							},
-							{
-								line: 7,
 								from: 60,
 							},
 							{
+								line: 7,
+								from: 95,
+							},
+							{
 								line: 8,
-								from: 65,
+								from: 100,
 							},
 						]}
 					/>

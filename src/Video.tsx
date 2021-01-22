@@ -3,6 +3,7 @@ import {CodeFrame} from './CodeFrame';
 import {FastRefreshDemo} from './FastRefreshDemo';
 import {HelloWorld} from './HelloWorld';
 import {Intro} from './Intro/Intro';
+import {Logo} from './Logo/Logo';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
 import {WebTechnologies} from './WebTechnologies';
 
@@ -84,6 +85,14 @@ export const RemotionVideo = () => {
 				height={1080}
 				fps={30}
 				durationInFrames={4 * 30}
+			/>
+			<Composition
+				component={Logo}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={6 * 30}
+				id="Logo"
 			/>
 		</>
 	);

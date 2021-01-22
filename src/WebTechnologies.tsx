@@ -19,7 +19,7 @@ const Title = styled.div`
 	font-weight: bold;
 	font-size: 120px;
 	line-height: 1em;
-	font-family: ---apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `;
 

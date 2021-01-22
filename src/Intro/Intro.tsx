@@ -24,7 +24,7 @@ const ZIndex1 = styled.div`
 `;
 
 const Text = styled.span`
-	font-family: ---apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-size: 180px;
 	font-weight: 700;
