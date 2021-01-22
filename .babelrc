@@ -1,0 +1,12 @@
+{
+	"plugins": [
+		[
+			"prismjs",
+			{
+				"languages": ["javascript", "css", "markup", "tsx"],
+				"plugins": ["line-numbers", "line-highlight"],
+				"css": false
+			}
+		]
+	]
+}
