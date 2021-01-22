@@ -10,7 +10,7 @@ const Container = styled.div`
 `;
 
 export const Howto: React.FC = () => {
-	const {fps, width} = useVideoConfig();
+	const {fps} = useVideoConfig();
 	const frame = useCurrentFrame();
 	const progress = spring({
 		fps,
@@ -21,16 +21,6 @@ export const Howto: React.FC = () => {
 	});
 
 	const translateY = interpolate(progress, [0, 1], [600, 0]);
-
-	const moveOutProgress = spring({
-		fps,
-		frame: frame - 50,
-		config: {
-			damping: 200,
-		},
-	});
-
-	const translateX = interpolate(moveOutProgress, [0, 1], [0, -width]);
 
 	return (
 		<Container
@@ -44,7 +34,7 @@ export const Howto: React.FC = () => {
 		>
 			<div
 				style={{
-					transform: `translateY(${translateY}px) translateX(${translateX}px)`,
+					transform: `translateY(${translateY}px)`,
 				}}
 			>
 				How to write a <br /> video in React?

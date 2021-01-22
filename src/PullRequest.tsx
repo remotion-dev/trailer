@@ -1,6 +1,5 @@
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
-import pullRequest from './pull-request.png';
 
 const Container = styled.div`
 	background-color: white;
@@ -15,6 +14,8 @@ const Img = styled.img`
 `;
 
 export const PullRequest: React.FC = () => {
+	const pullRequest = require('./pull-request.png');
+
 	const {fps} = useVideoConfig();
 	const frame = useCurrentFrame();
 	const scale = spring({

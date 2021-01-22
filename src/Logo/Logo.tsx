@@ -35,7 +35,7 @@ export const Logo: React.FC = () => {
 	});
 	const textOpacity = interpolate(
 		frame,
-		[scaleStart - 20, scaleStart - 10],
+		[scaleStart - 10, scaleStart - 0],
 		[1, 0]
 	);
 
@@ -69,7 +69,11 @@ export const Logo: React.FC = () => {
 					justifyContent: 'center',
 					alignItems: 'center',
 					flex: 1,
-					marginLeft: interpolate(textAnimated, [0, 1], [300, 500]),
+					transform: `translateX(${interpolate(
+						textAnimated,
+						[0, 1],
+						[300, 500]
+					)}px)`,
 					opacity: interpolate(textAnimated, [0.5, 1], [0, 1]),
 				}}
 			>
@@ -83,7 +87,11 @@ export const Logo: React.FC = () => {
 					justifyContent: 'center',
 					alignItems: 'center',
 					display: 'flex',
-					marginLeft: interpolate(textAnimated, [0, 1], [0, -950]),
+					transform: `translateX(${interpolate(
+						textAnimated,
+						[0, 1],
+						[0, -950]
+					)}px)`,
 				}}
 			>
 				<Triangle

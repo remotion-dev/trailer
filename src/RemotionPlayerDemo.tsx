@@ -1,8 +1,9 @@
 import React from 'react';
 import {Video} from 'remotion';
-import playerDemo from './remotion-player.webm';
 
 export const RemotionPlayerDemo: React.FC = () => {
+	const playerDemo = require('./remotion-player.webm');
+
 	return (
 		<div
 			style={{

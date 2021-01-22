@@ -1,7 +1,6 @@
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
 import {Inspect} from './Inspect';
-import inspectandrefactor from './inspect-and-refactor.png';
 
 const Container = styled.div`
 	background-color: white;
@@ -14,6 +13,8 @@ const Container = styled.div`
 const start = 25;
 
 export const InspectAndRefactor: React.FC = () => {
+	const inspectandrefactor = require('./inspect-and-refactor.png');
+
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const progress = spring({

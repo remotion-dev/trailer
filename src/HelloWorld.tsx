@@ -1,4 +1,5 @@
 import {Audio, Sequence, useCurrentFrame} from 'remotion';
+import {AbsContainer} from './AbsContainer';
 import {CodeFrame} from './CodeFrame';
 import {FastRefreshDemo} from './FastRefreshDemo';
 import {Fork} from './Fork';
@@ -9,41 +10,57 @@ import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
 import {PullRequest} from './PullRequest';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
-import voiceover from './voiceover.mp3';
+import {Transition} from './Transition';
 import {WebTechnologies} from './WebTechnologies';
 
 export const HelloWorld: React.FC = () => {
 	const frame = useCurrentFrame();
+	const voiceover = require('./voiceover.mp3');
 
 	return (
 		<div style={{flex: 1, backgroundColor: 'white'}}>
 			<div>
-				<Sequence from={0} durationInFrames={135}>
-					<Intro />
+				<Sequence from={0} durationInFrames={135 + 8}>
+					<Transition type="out">
+						<Intro />
+					</Transition>
 				</Sequence>
 				<Sequence from={135} durationInFrames={60}>
-					<GoToGithub />
+					<Transition type="in">
+						<GoToGithub />
+					</Transition>
 				</Sequence>
 				<Sequence from={195} durationInFrames={40}>
 					<Fork />
 				</Sequence>
-				<Sequence from={235} durationInFrames={70}>
-					<InspectAndRefactor />
+				<Sequence from={235} durationInFrames={78}>
+					<Transition type="out">
+						<InspectAndRefactor />
+					</Transition>
 				</Sequence>
 				<Sequence from={305} durationInFrames={70}>
-					<PullRequest />
+					<Transition type="in">
+						<PullRequest />
+					</Transition>
 				</Sequence>
 				<Sequence from={375} durationInFrames={135}>
 					<Intro />
 				</Sequence>
-				<Sequence from={510} durationInFrames={70}>
-					<Howto />
+				<Sequence from={510} durationInFrames={68}>
+					<Transition type="out">
+						<AbsContainer>
+							<Howto />
+						</AbsContainer>
+					</Transition>
 				</Sequence>
-				<Sequence from={580} durationInFrames={170}>
-					<Logo />
+				<Sequence from={570} durationInFrames={170}>
+					<Transition type="in">
+						<AbsContainer style={{overflow: 'hidden'}}>
+							<Logo />
+						</AbsContainer>
+					</Transition>
 				</Sequence>
-
-				<Sequence from={750} durationInFrames={180}>
+				<Sequence from={740} durationInFrames={190}>
 					<CodeFrame
 						title="Video.tsx"
 						code={`

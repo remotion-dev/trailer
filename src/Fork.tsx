@@ -1,6 +1,5 @@
 import {spring, useCurrentFrame, useVideoConfig, Video} from 'remotion';
 import styled from 'styled-components';
-import fork from './fork-trimmed.webm';
 
 const Container = styled.div`
 	background-color: #fafbfc;
@@ -16,6 +15,8 @@ const Vid = styled(Video)`
 `;
 
 export const Fork: React.FC = () => {
+	const fork = require('./fork-trimmed.webm');
+
 	const {fps} = useVideoConfig();
 	const frame = useCurrentFrame();
 	const scale = spring({

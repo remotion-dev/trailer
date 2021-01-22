@@ -1,6 +1,5 @@
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
-import github from './github.png';
 
 const Container = styled.div`
 	background-color: white;
@@ -15,6 +14,8 @@ const Img = styled.img`
 `;
 
 export const GoToGithub: React.FC = () => {
+	const github = require('./github.png');
+
 	const {fps} = useVideoConfig();
 	const frame = useCurrentFrame();
 	const scale = spring({
