@@ -10,6 +10,7 @@ import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
 import {PullRequest} from './PullRequest';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
+import {TerminalRender} from './TerminalRender';
 import {Transition} from './Transition';
 import {WebTechnologies} from './WebTechnologies';
 
@@ -164,11 +165,14 @@ ${'    '}
 				<Sequence from={1170} durationInFrames={90}>
 					<WebTechnologies />
 				</Sequence>
-				<Sequence from={1260} durationInFrames={6 * 30}>
+				<Sequence from={1260} durationInFrames={180}>
 					<RemotionPlayerDemo />
 				</Sequence>
-				<Sequence from={1260 + 6 * 30} durationInFrames={5 * 30}>
+				<Sequence from={1440} durationInFrames={150}>
 					<FastRefreshDemo />
+				</Sequence>
+				<Sequence from={1590} durationInFrames={4 * 30}>
+					<TerminalRender />
 				</Sequence>
 				<Audio src={voiceover} />
 			</div>

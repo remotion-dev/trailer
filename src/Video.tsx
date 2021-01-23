@@ -10,6 +10,7 @@ import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
 import {PullRequest} from './PullRequest';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
+import {TerminalRender} from './TerminalRender';
 import {WebTechnologies} from './WebTechnologies';
 
 export const RemotionVideo: React.FC = () => {
@@ -138,6 +139,14 @@ export const RemotionVideo = () => {
 				fps={30}
 				durationInFrames={6 * 30}
 				id="Howto"
+			/>
+			<Composition
+				component={TerminalRender}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={6 * 30}
+				id="TerminalRender"
 			/>
 		</>
 	);

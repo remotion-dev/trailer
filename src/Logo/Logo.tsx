@@ -72,7 +72,7 @@ export const Logo: React.FC = () => {
 					transform: `translateX(${interpolate(
 						textAnimated,
 						[0, 1],
-						[300, 500]
+						[100, 300]
 					)}px)`,
 					opacity: interpolate(textAnimated, [0.5, 1], [0, 1]),
 				}}
@@ -90,7 +90,7 @@ export const Logo: React.FC = () => {
 					transform: `translateX(${interpolate(
 						textAnimated,
 						[0, 1],
-						[0, -950]
+						[0, -450]
 					)}px)`,
 				}}
 			>
