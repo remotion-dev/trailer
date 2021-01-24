@@ -172,7 +172,7 @@ export const RemotionVideo = () => {
 				width={1920}
 				height={1080}
 				fps={30}
-				durationInFrames={6 * 30}
+				durationInFrames={4 * 30}
 				id="BestQualities"
 			/>
 		</>

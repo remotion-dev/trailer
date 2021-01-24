@@ -1,5 +1,6 @@
 import {Audio, Sequence, useCurrentFrame} from 'remotion';
 import {AbsContainer} from './AbsContainer';
+import {BestQualities} from './BestQualities';
 import {CodeFrame} from './CodeFrame';
 import {FastRefreshDemo} from './FastRefreshDemo';
 import {Fork} from './Fork';
@@ -178,17 +179,20 @@ ${'    '}
 						<TerminalRender />
 					</Transition>
 				</Sequence>
-				<Sequence from={1710} durationInFrames={120}>
+				<Sequence from={1710} durationInFrames={120 + 8}>
 					<Transition type="in">
 						<Transition type="out">
 							<Ssr />
 						</Transition>
 					</Transition>
 				</Sequence>
-				<Sequence from={1830 - 8} durationInFrames={120}>
+				<Sequence from={1830} durationInFrames={120}>
 					<Transition type="in">
 						<Multithreaded />
 					</Transition>
+				</Sequence>
+				<Sequence from={1950} durationInFrames={120}>
+					<BestQualities />
 				</Sequence>
 				<Audio src={voiceover} />
 			</div>

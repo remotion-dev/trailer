@@ -29,7 +29,7 @@ export const Multithreaded: React.FC = () => {
 		<Container>
 			<Column>
 				<Cpu />
-				<Title>Multi-threaded rendering</Title>
+				<Title>Multithreaded rendering</Title>
 			</Column>
 		</Container>
 	);

@@ -3,14 +3,27 @@ import styled from 'styled-components';
 
 const ListItem = styled.div`
 	font-size: 40px;
-	line-height: 1.5;
+	line-height: 1.7;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `;
 
+const Title = styled.div`
+	font-weight: bold;
+	font-size: 65px;
+	line-height: 1.1;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	margin-bottom: 30px;
+	white-space: pre;
+`;
+
 export const Feature: React.FC<{
 	index: number;
-}> = ({children, index}) => {
+	fadeOutIndex: number;
+	x: number;
+	title: boolean;
+}> = ({children, index, title, fadeOutIndex, x}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const progress = spring({
@@ -20,14 +33,26 @@ export const Feature: React.FC<{
 			damping: 200,
 		},
 	});
-	const translateY = interpolate(progress, [0, 1], [800, 0]);
+	const translateY = interpolate(progress, [0, 1], [1000, 0]);
+	const horizontalProgress = spring({
+		fps,
+		frame: frame - fadeOutIndex - 70,
+		config: {
+			damping: 200,
+		},
+	});
+	const opacity = interpolate(horizontalProgress, [0, 0.7], [1, 0]);
+	const translateX = interpolate(horizontalProgress, [0, 1], [0, x]);
+
+	const Comp = title ? Title : ListItem;
 	return (
-		<ListItem
+		<Comp
 			style={{
-				transform: `translateY(${translateY}px)`,
+				opacity,
+				transform: `translateY(${translateY}px) translateX(${translateX}px)`,
 			}}
 		>
 			{children}
-		</ListItem>
+		</Comp>
 	);
 };

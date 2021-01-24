@@ -112,7 +112,7 @@ export const Feature: React.FC<{
 	features: TFeature[];
 }> = ({title, features}) => {
 	return (
-		<div style={{flex: 1}}>
+		<div>
 			<Title>{title}</Title>
 			<Subtitle>Examples included for</Subtitle>
 			<div style={{height: 20}} />

@@ -1,3 +1,4 @@
+import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
 import {AbsContainer} from './AbsContainer';
 import {Feature} from './Qualities';
@@ -7,22 +8,6 @@ const Container = styled(AbsContainer)`
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-`;
-
-const Title = styled.div`
-	font-weight: bold;
-	font-size: 65px;
-	line-height: 1.1;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	margin-bottom: 30px;
-`;
-
-const ListItem = styled.div`
-	font-size: 40px;
-	line-height: 1.5;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `;
 
 const Left = styled.div``;
@@ -41,6 +26,7 @@ const Row = styled.div`
 `;
 
 const programmingFeatures = [
+	'Benefits of\nprogramming',
 	'Type safety',
 	'Testability',
 	'Server-side rendering',
@@ -53,24 +39,39 @@ const programmingFeatures = [
 ];
 
 export const BestQualities: React.FC = () => {
+	const remotionLogo = require('./remotion-logo.png');
+	const frame = useCurrentFrame();
+	const {fps} = useVideoConfig();
+
+	const logoProgress = spring({
+		frame: frame - 70,
+		fps,
+		config: {
+			damping: 200,
+		},
+	});
+
 	return (
 		<Container>
 			<Row>
 				<Left>
-					<Title>
-						Benefits of <br /> programming
-					</Title>
 					{programmingFeatures.map((f, index) => {
-						return <Feature index={index}>{f}</Feature>;
+						return (
+							<Feature
+								title={index === 0}
+								x={500}
+								index={index}
+								fadeOutIndex={index * 0.66}
+							>
+								{f}
+							</Feature>
+						);
 					})}
 				</Left>
 				<Spacer />
 				<Right>
-					<Title>
-						Video editing <br />
-						features
-					</Title>
 					{[
+						'Video editing\nfeatures',
 						'Visual Preview',
 						'Timeline Scrubbing',
 						'Video footage export',
@@ -82,13 +83,28 @@ export const BestQualities: React.FC = () => {
 						'MP4 export',
 					].map((f, index) => {
 						return (
-							<Feature index={index + programmingFeatures.length + 30}>
+							<Feature
+								title={index === 0}
+								x={-500}
+								index={index + programmingFeatures.length}
+								fadeOutIndex={index * 0.66}
+							>
 								{f}
 							</Feature>
 						);
 					})}
 				</Right>
 			</Row>
+			<AbsContainer style={{justifyContent: 'center', alignItems: 'center'}}>
+				<img
+					src={remotionLogo}
+					style={{
+						height: 400,
+						width: 400,
+						transform: `scale(${logoProgress})`,
+					}}
+				/>
+			</AbsContainer>
 		</Container>
 	);
 };
