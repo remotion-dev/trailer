@@ -1,4 +1,5 @@
 import {Composition} from 'remotion';
+import {BestQualities} from './BestQualities';
 import {CodeFrame} from './CodeFrame';
 import {FastRefreshDemo} from './FastRefreshDemo';
 import {Fork} from './Fork';
@@ -165,6 +166,14 @@ export const RemotionVideo = () => {
 				fps={30}
 				durationInFrames={6 * 30}
 				id="Multithreaded"
+			/>
+			<Composition
+				component={BestQualities}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={6 * 30}
+				id="BestQualities"
 			/>
 		</>
 	);
