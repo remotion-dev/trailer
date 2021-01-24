@@ -8,8 +8,10 @@ import {Howto} from './HowTo';
 import {InspectAndRefactor} from './InspectAndRefactor';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
+import {Multithreaded} from './MultiThreaded';
 import {PullRequest} from './PullRequest';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
+import {Ssr} from './SSRMultithreaded';
 import {TerminalRender} from './TerminalRender';
 import {WebTechnologies} from './WebTechnologies';
 
@@ -147,6 +149,22 @@ export const RemotionVideo = () => {
 				fps={30}
 				durationInFrames={6 * 30}
 				id="TerminalRender"
+			/>
+			<Composition
+				component={Ssr}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={6 * 30}
+				id="SSR"
+			/>
+			<Composition
+				component={Multithreaded}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={6 * 30}
+				id="Multithreaded"
 			/>
 		</>
 	);

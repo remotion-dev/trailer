@@ -8,8 +8,10 @@ import {Howto} from './HowTo';
 import {InspectAndRefactor} from './InspectAndRefactor';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
+import {Multithreaded} from './MultiThreaded';
 import {PullRequest} from './PullRequest';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
+import {Ssr} from './SSRMultithreaded';
 import {TerminalRender} from './TerminalRender';
 import {Transition} from './Transition';
 import {WebTechnologies} from './WebTechnologies';
@@ -171,8 +173,22 @@ ${'    '}
 				<Sequence from={1440} durationInFrames={150}>
 					<FastRefreshDemo />
 				</Sequence>
-				<Sequence from={1590} durationInFrames={4 * 30}>
-					<TerminalRender />
+				<Sequence from={1590} durationInFrames={128}>
+					<Transition type="out">
+						<TerminalRender />
+					</Transition>
+				</Sequence>
+				<Sequence from={1710} durationInFrames={120}>
+					<Transition type="in">
+						<Transition type="out">
+							<Ssr />
+						</Transition>
+					</Transition>
+				</Sequence>
+				<Sequence from={1830 - 8} durationInFrames={120}>
+					<Transition type="in">
+						<Multithreaded />
+					</Transition>
 				</Sequence>
 				<Audio src={voiceover} />
 			</div>

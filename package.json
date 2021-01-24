@@ -24,6 +24,7 @@
 		"express": "^4.17.1",
 		"hack-font": "^3.3.0",
 		"lodash": "^4.17.20",
+		"polished": "^4.0.5",
 		"prettier": "^2.2.1",
 		"prettier-plugin-organize-imports": "^1.1.1",
 		"prism-react-renderer": "^1.1.1",
