@@ -10,6 +10,7 @@ import {InspectAndRefactor} from './InspectAndRefactor';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
 import {Multithreaded} from './MultiThreaded';
+import {Pricing} from './Pricing';
 import {PullRequest} from './PullRequest';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
 import {Ssr} from './SSRMultithreaded';
@@ -174,6 +175,14 @@ export const RemotionVideo = () => {
 				fps={30}
 				durationInFrames={4 * 30}
 				id="BestQualities"
+			/>
+			<Composition
+				component={Pricing}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={4 * 30}
+				id="Pricing"
 			/>
 		</>
 	);
