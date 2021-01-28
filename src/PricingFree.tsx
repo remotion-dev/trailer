@@ -31,9 +31,10 @@ const Subtitle = styled.div`
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-weight: 400;
-	font-size: 60px;
+	font-size: 45px;
 	width: 900px;
 	line-height: 1.5;
+	font-weight: 700;
 `;
 
 export const PricingFree: React.FC = () => {
@@ -58,7 +59,7 @@ export const PricingFree: React.FC = () => {
 		},
 	});
 	const textScale = interpolate(subtitleProgress, [0, 1], [1, 0.7]);
-	const subtitleTranslate = interpolate(subtitleProgress, [0, 1], [0, 10]);
+	const subtitleTranslate = interpolate(subtitleProgress, [0, 1], [0, 20]);
 	return (
 		<Container>
 			<TitleContainer>
@@ -93,7 +94,7 @@ export const PricingFree: React.FC = () => {
 					transform: `translateY(${subtitleTranslate}px)`,
 				}}
 			>
-				For individuals, small companies, non-profits & education
+				For individuals, small companies, <br /> non-profits & education
 			</Subtitle>
 		</Container>
 	);

@@ -1,6 +1,7 @@
 import {Audio, Sequence, useCurrentFrame} from 'remotion';
 import {AbsContainer} from './AbsContainer';
 import {BestQualities} from './BestQualities';
+import {Blue} from './Blue';
 import {CodeFrame} from './CodeFrame';
 import {FadeTransition} from './FadeTransition';
 import {FastRefreshDemo} from './FastRefreshDemo';
@@ -8,15 +9,18 @@ import {Fork} from './Fork';
 import {GoToGithub} from './GoToGithub';
 import {Howto} from './HowTo';
 import {InspectAndRefactor} from './InspectAndRefactor';
+import {Install} from './Install';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
 import {Multithreaded} from './MultiThreaded';
+import {OpenSource} from './OpenSource';
 import {Pricing} from './Pricing';
 import {PullRequest} from './PullRequest';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
 import {Ssr} from './SSRMultithreaded';
 import {TerminalRender} from './TerminalRender';
 import {Transition} from './Transition';
+import {Website} from './Website';
 import {WebTechnologies} from './WebTechnologies';
 
 export const HelloWorld: React.FC = () => {
@@ -28,7 +32,7 @@ export const HelloWorld: React.FC = () => {
 			<div>
 				<Sequence from={0} durationInFrames={120 + 8}>
 					<Transition type="out">
-						<Intro />
+						<Intro offset={0} />
 					</Transition>
 				</Sequence>
 				<Sequence from={120} durationInFrames={60}>
@@ -198,8 +202,34 @@ ${'    '}
 				<Sequence from={1840} durationInFrames={240}>
 					<BestQualities />
 				</Sequence>
-				<Sequence from={2080} durationInFrames={280}>
+				<Sequence from={2080} durationInFrames={100}>
+					<FadeTransition type="out" duration={5}>
+						<FadeTransition type="in" duration={5}>
+							<OpenSource />
+						</FadeTransition>
+					</FadeTransition>
+				</Sequence>
+				<Sequence from={2180} durationInFrames={150}>
 					<Pricing />
+				</Sequence>
+				<Sequence from={2330 - 10} durationInFrames={100}>
+					<Transition type="in">
+						<Blue />
+					</Transition>
+				</Sequence>
+				<Sequence from={2330} durationInFrames={180 + 8}>
+					<Transition type="in">
+						<Transition type="out">
+							<Install />
+						</Transition>
+					</Transition>
+				</Sequence>
+				<Sequence from={2510} durationInFrames={280}>
+					<Transition type="in">
+						<Transition type="out">
+							<Website />
+						</Transition>
+					</Transition>
 				</Sequence>
 				<Audio src={voiceover} />
 			</div>

@@ -7,14 +7,17 @@ import {GoToGithub} from './GoToGithub';
 import {HelloWorld} from './HelloWorld';
 import {Howto} from './HowTo';
 import {InspectAndRefactor} from './InspectAndRefactor';
+import {Install} from './Install';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
 import {Multithreaded} from './MultiThreaded';
+import {OpenSource} from './OpenSource';
 import {Pricing} from './Pricing';
 import {PullRequest} from './PullRequest';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
 import {Ssr} from './SSRMultithreaded';
 import {TerminalRender} from './TerminalRender';
+import {Website} from './Website';
 import {WebTechnologies} from './WebTechnologies';
 
 export const RemotionVideo: React.FC = () => {
@@ -183,6 +186,30 @@ export const RemotionVideo = () => {
 				fps={30}
 				durationInFrames={4 * 30}
 				id="Pricing"
+			/>
+			<Composition
+				component={OpenSource}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={4 * 30}
+				id="OpenSource"
+			/>
+			<Composition
+				component={Install}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={2 * 30}
+				id="Install"
+			/>
+			<Composition
+				component={Website}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={2 * 30}
+				id="Website"
 			/>
 		</>
 	);

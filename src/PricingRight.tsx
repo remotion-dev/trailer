@@ -35,7 +35,8 @@ const Subtitle = styled.div`
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-weight: 400;
-	font-size: 60px;
+	font-size: 45px;
+	font-weight: 700;
 	width: 900px;
 	line-height: 1.5;
 `;
@@ -48,8 +49,8 @@ export const PricingRight: React.FC = () => {
 					Licensing <br /> model
 				</Title>
 			</TitleContainer>
-			<Subtitle style={{transform: `translateY(10px)`}}>
-				for companies with 3 or more people
+			<Subtitle style={{transform: `translateY(20px)`}}>
+				with support, for companies with <br /> 3 or more people
 			</Subtitle>
 		</Container>
 	);
