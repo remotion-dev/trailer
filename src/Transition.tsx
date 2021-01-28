@@ -11,7 +11,7 @@ export const Transition: React.FC<{
 	const firstFrame = videoConfig.durationInFrames - 9;
 	const progress = spring({
 		config: {
-			damping: 200,
+			damping: 80,
 		},
 		fps: videoConfig.fps,
 		frame: type === 'in' ? frame : Math.max(0, frame - firstFrame),

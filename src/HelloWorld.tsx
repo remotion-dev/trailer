@@ -2,6 +2,7 @@ import {Audio, Sequence, useCurrentFrame} from 'remotion';
 import {AbsContainer} from './AbsContainer';
 import {BestQualities} from './BestQualities';
 import {CodeFrame} from './CodeFrame';
+import {FadeTransition} from './FadeTransition';
 import {FastRefreshDemo} from './FastRefreshDemo';
 import {Fork} from './Fork';
 import {GoToGithub} from './GoToGithub';
@@ -10,6 +11,7 @@ import {InspectAndRefactor} from './InspectAndRefactor';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
 import {Multithreaded} from './MultiThreaded';
+import {Pricing} from './Pricing';
 import {PullRequest} from './PullRequest';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
 import {Ssr} from './SSRMultithreaded';
@@ -24,47 +26,47 @@ export const HelloWorld: React.FC = () => {
 	return (
 		<div style={{flex: 1, backgroundColor: 'white'}}>
 			<div>
-				<Sequence from={0} durationInFrames={135 + 8}>
+				<Sequence from={0} durationInFrames={120 + 8}>
 					<Transition type="out">
 						<Intro />
 					</Transition>
 				</Sequence>
-				<Sequence from={135} durationInFrames={60}>
+				<Sequence from={120} durationInFrames={60}>
 					<Transition type="in">
 						<GoToGithub />
 					</Transition>
 				</Sequence>
-				<Sequence from={195} durationInFrames={40}>
+				<Sequence from={180} durationInFrames={40}>
 					<Fork />
 				</Sequence>
-				<Sequence from={235} durationInFrames={78}>
+				<Sequence from={220} durationInFrames={78}>
 					<Transition type="out">
 						<InspectAndRefactor />
 					</Transition>
 				</Sequence>
-				<Sequence from={305} durationInFrames={70}>
+				<Sequence from={290} durationInFrames={60}>
 					<Transition type="in">
 						<PullRequest />
 					</Transition>
 				</Sequence>
-				<Sequence from={375} durationInFrames={135}>
-					<Intro />
+				<Sequence from={350} durationInFrames={90}>
+					<Intro offset={-40} />
 				</Sequence>
-				<Sequence from={510} durationInFrames={68}>
+				<Sequence from={440} durationInFrames={58}>
 					<Transition type="out">
 						<AbsContainer>
 							<Howto />
 						</AbsContainer>
 					</Transition>
 				</Sequence>
-				<Sequence from={570} durationInFrames={170}>
+				<Sequence from={490} durationInFrames={170}>
 					<Transition type="in">
 						<AbsContainer style={{overflow: 'hidden'}}>
 							<Logo />
 						</AbsContainer>
 					</Transition>
 				</Sequence>
-				<Sequence from={740} durationInFrames={190}>
+				<Sequence from={660} durationInFrames={190}>
 					<CodeFrame
 						title="Video.tsx"
 						code={`
@@ -102,7 +104,7 @@ export const RemotionVideo = () => {
 						]}
 					/>
 				</Sequence>
-				<Sequence from={930} durationInFrames={240}>
+				<Sequence from={850} durationInFrames={240}>
 					<CodeFrame
 						title="MyVideo.tsx"
 						code={`
@@ -165,34 +167,39 @@ ${'    '}
 						]}
 					/>
 				</Sequence>
-				<Sequence from={1170} durationInFrames={90}>
+				<Sequence from={1090} durationInFrames={70}>
 					<WebTechnologies />
 				</Sequence>
-				<Sequence from={1260} durationInFrames={180}>
+				<Sequence from={1160} durationInFrames={180}>
 					<RemotionPlayerDemo />
 				</Sequence>
-				<Sequence from={1440} durationInFrames={150}>
+				<Sequence from={1340} durationInFrames={180}>
 					<FastRefreshDemo />
 				</Sequence>
-				<Sequence from={1590} durationInFrames={128}>
+				<Sequence from={1520} durationInFrames={128}>
 					<Transition type="out">
 						<TerminalRender />
 					</Transition>
 				</Sequence>
-				<Sequence from={1710} durationInFrames={120 + 8}>
+				<Sequence from={1640} durationInFrames={80 + 9}>
 					<Transition type="in">
 						<Transition type="out">
 							<Ssr />
 						</Transition>
 					</Transition>
 				</Sequence>
-				<Sequence from={1830} durationInFrames={120}>
+				<Sequence from={1720} durationInFrames={120}>
 					<Transition type="in">
-						<Multithreaded />
+						<FadeTransition type="out" duration={9}>
+							<Multithreaded />
+						</FadeTransition>
 					</Transition>
 				</Sequence>
-				<Sequence from={1950} durationInFrames={120}>
+				<Sequence from={1840} durationInFrames={240}>
 					<BestQualities />
+				</Sequence>
+				<Sequence from={2080} durationInFrames={280}>
+					<Pricing />
 				</Sequence>
 				<Audio src={voiceover} />
 			</div>

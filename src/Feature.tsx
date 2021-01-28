@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Title = styled.h2`
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-size: 60px;
+	font-size: 90px;
 	font-weight: 700;
 	text-align: center;
 	margin-bottom: 80px;
@@ -13,7 +13,7 @@ const Title = styled.h2`
 const Subtitle = styled.div`
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-size: 30px;
+	font-size: 50px;
 	font-weight: 400;
 	text-align: center;
 	margin-bottom: 20px;

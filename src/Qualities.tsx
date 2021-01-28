@@ -36,7 +36,7 @@ export const Feature: React.FC<{
 	const translateY = interpolate(progress, [0, 1], [1000, 0]);
 	const horizontalProgress = spring({
 		fps,
-		frame: frame - fadeOutIndex - 70,
+		frame: frame - fadeOutIndex - 180,
 		config: {
 			damping: 200,
 		},

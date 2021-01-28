@@ -30,12 +30,12 @@ const Text = styled.span`
 	font-weight: 700;
 `;
 
-export const Intro: React.FC = () => {
+export const Intro: React.FC<{offset: number}> = ({offset}) => {
 	const frame = useCurrentFrame();
 	const {fps, width, height, durationInFrames} = useVideoConfig();
 	const scaleProgress = spring({
 		fps,
-		frame,
+		frame: frame - offset,
 		config: {
 			mass: 10,
 			damping: 200,
@@ -44,7 +44,7 @@ export const Intro: React.FC = () => {
 	const scale = interpolate(scaleProgress, [0, 1], [1.5, 1]);
 	const spring1 = spring({
 		fps,
-		frame: frame - 30,
+		frame: frame - 30 - offset,
 		config: {
 			stiffness: 100,
 			damping: 200,
@@ -52,7 +52,7 @@ export const Intro: React.FC = () => {
 	});
 	const spring2 = spring({
 		fps,
-		frame: frame - 60,
+		frame: frame - 60 - offset,
 		config: {
 			stiffness: 100,
 			damping: 200,
@@ -85,8 +85,8 @@ export const Intro: React.FC = () => {
 	);
 
 	const opacity = interpolate(
-		frame,
-		[durationInFrames - 10, durationInFrames],
+		frame - offset,
+		[durationInFrames - 10 - offset, durationInFrames - offset],
 		[1, 0]
 	);
 

@@ -8,6 +8,10 @@ const Container = styled(AbsContainer)`
 	align-items: center;
 `;
 
+const TitleContainer = styled.div`
+	height: 300px;
+`;
+
 const Title = styled.div`
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -27,8 +31,8 @@ const Subtitle = styled.div`
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-weight: 400;
-	font-size: 40px;
-	width: 600px;
+	font-size: 60px;
+	width: 900px;
 	line-height: 1.5;
 `;
 
@@ -54,32 +58,35 @@ export const PricingFree: React.FC = () => {
 		},
 	});
 	const textScale = interpolate(subtitleProgress, [0, 1], [1, 0.7]);
-	const subtitleTranslate = interpolate(subtitleProgress, [0, 1], [0, -20]);
+	const subtitleTranslate = interpolate(subtitleProgress, [0, 1], [0, 10]);
 	return (
 		<Container>
-			<Title
-				style={{
-					transform: `scale(${textScale})`,
-				}}
-			>
-				{'Free'.split('').map((a, i) => {
-					// eslint-disable-next-line react/no-array-index-key
-					return (
-						<span
-							key={a + i}
-							style={{
-								fontSize: Math.round(
-									interpolate(progress(i), [0, 0.97], [0, 250], {
-										extrapolateRight: 'clamp',
-									})
-								),
-							}}
-						>
-							{a}
-						</span>
-					);
-				})}
-			</Title>
+			<TitleContainer>
+				<Title
+					style={{
+						transform: `scale(${textScale})`,
+					}}
+				>
+					{'Free'.split('').map((a, i) => {
+						// eslint-disable-next-line react/no-array-index-key
+						return (
+							<span
+								key={a + i}
+								style={{
+									fontSize: Math.round(
+										interpolate(progress(i), [0, 0.97], [0, 300], {
+											extrapolateRight: 'clamp',
+										})
+									),
+								}}
+							>
+								{a}
+							</span>
+						);
+					})}
+				</Title>
+			</TitleContainer>
+
 			<Subtitle
 				style={{
 					opacity: subtitleProgress,

@@ -44,7 +44,7 @@ export const BestQualities: React.FC = () => {
 	const {fps} = useVideoConfig();
 
 	const logoProgress = spring({
-		frame: frame - 70,
+		frame: frame - 180,
 		fps,
 		config: {
 			damping: 200,
@@ -60,7 +60,7 @@ export const BestQualities: React.FC = () => {
 							<Feature
 								title={index === 0}
 								x={500}
-								index={index}
+								index={index + 40}
 								fadeOutIndex={index * 0.66}
 							>
 								{f}
@@ -86,7 +86,7 @@ export const BestQualities: React.FC = () => {
 							<Feature
 								title={index === 0}
 								x={-500}
-								index={index + programmingFeatures.length}
+								index={index + programmingFeatures.length + 80}
 								fadeOutIndex={index * 0.66}
 							>
 								{f}
