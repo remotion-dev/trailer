@@ -5,12 +5,12 @@ import {EndCard} from './EndCard';
 import {FastRefreshDemo} from './FastRefreshDemo';
 import {Fork} from './Fork';
 import {GoToGithub} from './GoToGithub';
-import {HelloWorld} from './HelloWorld';
 import {Howto} from './HowTo';
 import {InspectAndRefactor} from './InspectAndRefactor';
 import {Install} from './Install';
 import {Intro} from './Intro/Intro';
 import {Logo} from './Logo/Logo';
+import {Main} from './Main';
 import {Multithreaded} from './MultiThreaded';
 import {OpenSource} from './OpenSource';
 import {Pricing} from './Pricing';
@@ -25,8 +25,8 @@ export const RemotionVideo: React.FC = () => {
 	return (
 		<>
 			<Composition
-				id="HelloWorld"
-				component={HelloWorld}
+				id="Main"
+				component={Main}
 				durationInFrames={101 * 30}
 				fps={30}
 				width={1920}

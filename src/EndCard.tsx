@@ -7,10 +7,12 @@ import {EndCardYarn} from './EndCardYarn';
 
 const Outer = styled(AbsContainer)`
 	background-color: white;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 `;
 
 const Container = styled(AbsContainer)`
 	background-color: rgba(0, 0, 0, 0.04);
+
 	flex-direction: row;
 	padding: 40px;
 `;
@@ -42,7 +44,7 @@ export const EndCard: React.FC = () => {
 	const progress = (i: number) =>
 		spring({
 			fps,
-			frame: frame - i * 10,
+			frame: frame - i * 10 - 15,
 			config: {
 				damping: 100,
 				mass: 2,

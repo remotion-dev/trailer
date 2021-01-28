@@ -18,14 +18,28 @@ const Link = styled.div`
 	font-weight: 700;
 	font-size: 60px;
 	font-family: -apple-system, BlinkMacSystemFont;
-	border-bottom: 3px solid black;
+	background: linear-gradient(to right, #e01d67, #79367a);
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	text-fill-color: transparent;
 `;
 
 export const EndCardWebsite: React.FC = () => {
 	return (
 		<Container>
 			<Title>Read the documentation:</Title>
-			<Link>remotion.dev</Link>
+			<a
+				href="https://remotion.dev"
+				target="_blank"
+				style={{
+					textDecoration: 'none',
+				}}
+			>
+				<Link>remotion.dev</Link>
+			</a>
 		</Container>
 	);
 };

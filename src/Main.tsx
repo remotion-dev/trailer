@@ -3,6 +3,7 @@ import {AbsContainer} from './AbsContainer';
 import {BestQualities} from './BestQualities';
 import {Blue} from './Blue';
 import {CodeFrame} from './CodeFrame';
+import {EndCard} from './EndCard';
 import {FadeTransition} from './FadeTransition';
 import {FastRefreshDemo} from './FastRefreshDemo';
 import {Fork} from './Fork';
@@ -23,7 +24,7 @@ import {Transition} from './Transition';
 import {Website} from './Website';
 import {WebTechnologies} from './WebTechnologies';
 
-export const HelloWorld: React.FC = () => {
+export const Main: React.FC = () => {
 	const frame = useCurrentFrame();
 	const voiceover = require('./voiceover.wav');
 
@@ -224,10 +225,17 @@ ${'    '}
 						</Transition>
 					</Transition>
 				</Sequence>
-				<Sequence from={2510} durationInFrames={280}>
+				<Sequence from={2510} durationInFrames={130}>
 					<Transition type="in">
 						<Transition type="out">
 							<Website />
+						</Transition>
+					</Transition>
+				</Sequence>
+				<Sequence from={2640} durationInFrames={280}>
+					<Transition type="in">
+						<Transition type="out">
+							<EndCard />
 						</Transition>
 					</Transition>
 				</Sequence>
