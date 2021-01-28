@@ -1,6 +1,7 @@
 import {Composition} from 'remotion';
 import {BestQualities} from './BestQualities';
 import {CodeFrame} from './CodeFrame';
+import {EndCard} from './EndCard';
 import {FastRefreshDemo} from './FastRefreshDemo';
 import {Fork} from './Fork';
 import {GoToGithub} from './GoToGithub';
@@ -210,6 +211,14 @@ export const RemotionVideo = () => {
 				fps={30}
 				durationInFrames={2 * 30}
 				id="Website"
+			/>
+			<Composition
+				component={EndCard}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={2 * 30}
+				id="EndCard"
 			/>
 		</>
 	);
