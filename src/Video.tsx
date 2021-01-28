@@ -27,7 +27,7 @@ export const RemotionVideo: React.FC = () => {
 			<Composition
 				id="Main"
 				component={Main}
-				durationInFrames={101 * 30}
+				durationInFrames={2934}
 				fps={30}
 				width={1920}
 				height={1080}

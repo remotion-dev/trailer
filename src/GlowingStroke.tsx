@@ -43,7 +43,7 @@ export const GlowingStroke: React.FC<{
 				extrapolateRight: 'clamp',
 			});
 		}
-		return interpolate(progress, [0.9, 1], [1, 0]);
+		return interpolate(progress, [0.9, 0.95], [1, 0]);
 	})();
 	const gId = `g-${color1}-${color2}`;
 	return (

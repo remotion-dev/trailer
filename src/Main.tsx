@@ -12,6 +12,7 @@ import {Howto} from './HowTo';
 import {InspectAndRefactor} from './InspectAndRefactor';
 import {Install} from './Install';
 import {Intro} from './Intro/Intro';
+import {JustWhite} from './JustWhite';
 import {Logo} from './Logo/Logo';
 import {Multithreaded} from './MultiThreaded';
 import {OpenSource} from './OpenSource';
@@ -225,18 +226,21 @@ ${'    '}
 						</Transition>
 					</Transition>
 				</Sequence>
-				<Sequence from={2510} durationInFrames={130}>
+				<Sequence from={2510} durationInFrames={138}>
 					<Transition type="in">
 						<Transition type="out">
 							<Website />
 						</Transition>
 					</Transition>
 				</Sequence>
-				<Sequence from={2640} durationInFrames={280}>
+				<Sequence from={2640} durationInFrames={289}>
 					<Transition type="in">
-						<Transition type="out">
-							<EndCard />
-						</Transition>
+						<EndCard />
+					</Transition>
+				</Sequence>
+				<Sequence from={2920} durationInFrames={14}>
+					<Transition type="in">
+						<JustWhite />
 					</Transition>
 				</Sequence>
 				<Audio src={voiceover} />
