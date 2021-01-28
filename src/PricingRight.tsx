@@ -26,7 +26,7 @@ const Title = styled.div`
 	-moz-text-fill-color: transparent;
 	text-fill-color: transparent;
 	color: #3b5998;
-	font-weight: 700;
+	font-weight: 800;
 	font-size: 120px;
 	line-height: 1;
 `;

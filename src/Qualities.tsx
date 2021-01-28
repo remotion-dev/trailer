@@ -1,14 +1,20 @@
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
 
-const ListItem = styled.div`
+const ListItem = styled.div<{
+	color1: string;
+	color2: string;
+}>`
 	font-size: 40px;
 	line-height: 1.7;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `;
 
-const Title = styled.div`
+const Title = styled.div<{
+	color1: string;
+	color2: string;
+}>`
 	font-weight: bold;
 	font-size: 65px;
 	line-height: 1.1;
@@ -16,6 +22,17 @@ const Title = styled.div`
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	margin-bottom: 30px;
 	white-space: pre;
+	background: linear-gradient(
+		to right,
+		${(props) => props.color1},
+		${(props) => props.color2}
+	);
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	text-fill-color: transparent;
 `;
 
 export const Feature: React.FC<{
@@ -23,7 +40,9 @@ export const Feature: React.FC<{
 	fadeOutIndex: number;
 	x: number;
 	title: boolean;
-}> = ({children, index, title, fadeOutIndex, x}) => {
+	color1: string;
+	color2: string;
+}> = ({children, index, title, fadeOutIndex, x, color1, color2}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const progress = spring({
@@ -47,6 +66,8 @@ export const Feature: React.FC<{
 	const Comp = title ? Title : ListItem;
 	return (
 		<Comp
+			color1={color1}
+			color2={color2}
 			style={{
 				opacity,
 				transform: `translateY(${translateY}px) translateX(${translateX}px)`,

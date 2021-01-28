@@ -20,7 +20,7 @@ const Subtitle = styled.div`
 export const Website: React.FC = () => {
 	return (
 		<Container>
-			<Subtitle>remotion.dev</Subtitle>
+			<Subtitle>www.remotion.dev</Subtitle>
 			<br />
 			<br />
 			<img src={require('./remotion-website.png')} style={{width: 1400}} />

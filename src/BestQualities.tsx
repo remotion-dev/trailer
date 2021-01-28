@@ -58,6 +58,8 @@ export const BestQualities: React.FC = () => {
 					{programmingFeatures.map((f, index) => {
 						return (
 							<Feature
+								color1="#f5ad43"
+								color2="#fd764a"
 								title={index === 0}
 								x={500}
 								index={index + 40}
@@ -84,6 +86,8 @@ export const BestQualities: React.FC = () => {
 					].map((f, index) => {
 						return (
 							<Feature
+								color1="#5757f5"
+								color2="#00005b"
 								title={index === 0}
 								x={-500}
 								index={index + programmingFeatures.length + 80}

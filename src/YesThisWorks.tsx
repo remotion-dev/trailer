@@ -1,4 +1,5 @@
 export const ExcalidrawYesThisWorks: React.FC = () => {
+	require('./excalidraw-fonts.css');
 	return (
 		<svg
 			version="1.1"
@@ -7,18 +8,6 @@ export const ExcalidrawYesThisWorks: React.FC = () => {
 			width="522.6017099749004"
 			height="220.77327771798426"
 		>
-			<defs>
-				<style>
-					{`@font-face {
-          font-family: "Virgil";
-          src: url("https://excalidraw.com/FG_Virgil.woff2");
-        }
-        @font-face {
-          font-family: "Cascadia";
-          src: url("https://excalidraw.com/Cascadia.woff2");
-        }`}
-				</style>
-			</defs>
 			<rect
 				x="0"
 				y="0"

@@ -126,7 +126,7 @@ export const EndCard: React.FC = () => {
 								radius={30}
 								color1="#f5ad43"
 								color2="#fd764a"
-								offset={70}
+								offset={55}
 							/>
 							<EndCardRepo />
 						</Centered>
