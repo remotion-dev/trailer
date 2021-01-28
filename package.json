@@ -4,7 +4,7 @@
 	"description": "My Remotion video",
 	"scripts": {
 		"start": "remotion preview src/index.tsx",
-		"build": "ts-node render.ts HelloWorld out.mp4",
+		"build": "ts-node render.ts Main out.mp4",
 		"server": "ts-node server.tsx",
 		"test": "eslint 'src' --ext ts,tsx"
 	},

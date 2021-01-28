@@ -14,7 +14,7 @@ import {evaluateRootForCompositions} from 'remotion';
 
 const app = express();
 const port = 8000;
-const videoName = 'HelloWorld';
+const videoName = 'Main';
 
 const cache = new Map<string, string>();
 
