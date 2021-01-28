@@ -18,7 +18,6 @@ const LineContent = styled.span`
 `;
 
 const Container = styled.div`
-	border: 1px solid rgba(0, 0, 0, 0.1);
 	background-color: white;
 	flex: 1;
 	justify-content: center;
@@ -27,7 +26,7 @@ const Container = styled.div`
 `;
 
 const Frame = styled.div`
-	border: 1px solid rgba(0, 0, 0, 0.14);
+	border: 2px solid rgba(0, 0, 0, 0.14);
 	border-radius: 20px;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
