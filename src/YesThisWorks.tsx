@@ -1,5 +1,6 @@
+import './excalidraw-fonts.css';
+
 export const ExcalidrawYesThisWorks: React.FC = () => {
-	require('./excalidraw-fonts.css');
 	return (
 		<svg
 			version="1.1"

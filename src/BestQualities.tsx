@@ -2,6 +2,7 @@ import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
 import {AbsContainer} from './AbsContainer';
 import {Feature} from './Qualities';
+import remotionLogo from './remotion-logo.png';
 
 const Container = styled(AbsContainer)`
 	background-color: white;
@@ -39,7 +40,6 @@ const programmingFeatures = [
 ];
 
 export const BestQualities: React.FC = () => {
-	const remotionLogo = require('./remotion-logo.png');
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 

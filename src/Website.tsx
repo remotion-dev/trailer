@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {AbsContainer} from './AbsContainer';
+import remotionWebsite from './remotion-website.png';
 
 const Container = styled(AbsContainer)`
 	background-color: white;
@@ -23,7 +24,7 @@ export const Website: React.FC = () => {
 			<Subtitle>www.remotion.dev</Subtitle>
 			<br />
 			<br />
-			<img src={require('./remotion-website.png')} style={{width: 1400}} />
+			<img src={remotionWebsite} style={{width: 1400}} />
 		</Container>
 	);
 };

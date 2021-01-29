@@ -1,7 +1,7 @@
 import {useVideoConfig, Video} from 'remotion';
+import fastRefreshDemo from './fast-refresh-demo.webm';
 
 export const FastRefreshDemo: React.FC = () => {
-	const fastRefreshDemo = require('./fast-refresh-demo.webm');
 	const {height} = useVideoConfig();
 	return <Video src={fastRefreshDemo} style={{height}} />;
 };

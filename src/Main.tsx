@@ -22,12 +22,12 @@ import {RemotionPlayerDemo} from './RemotionPlayerDemo';
 import {Ssr} from './SSRMultithreaded';
 import {TerminalRender} from './TerminalRender';
 import {Transition} from './Transition';
+import voiceover from './voiceover.wav';
 import {Website} from './Website';
 import {WebTechnologies} from './WebTechnologies';
 
 export const Main: React.FC = () => {
 	const frame = useCurrentFrame();
-	const voiceover = require('./voiceover.wav');
 
 	return (
 		<div style={{flex: 1, backgroundColor: 'white'}}>

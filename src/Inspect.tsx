@@ -1,5 +1,6 @@
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
+import github from './inspect.png';
 
 const Container = styled.div`
 	background-color: white;
@@ -16,7 +17,6 @@ const Img = styled.img`
 export const Inspect: React.FC = () => {
 	const {fps} = useVideoConfig();
 	const frame = useCurrentFrame();
-	const github = require('./inspect.png');
 
 	const progress = spring({
 		fps,

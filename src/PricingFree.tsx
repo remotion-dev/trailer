@@ -69,7 +69,6 @@ export const PricingFree: React.FC = () => {
 					}}
 				>
 					{'Free'.split('').map((a, i) => {
-						// eslint-disable-next-line react/no-array-index-key
 						return (
 							<span
 								key={a + i}

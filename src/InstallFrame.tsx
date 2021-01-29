@@ -1,3 +1,4 @@
+import 'hack-font/build/web/hack.css';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -14,13 +15,10 @@ const Container = styled.div`
 `;
 
 export const InstallFrame: React.FC = () => {
-	require('hack-font/build/web/hack.css');
-
 	return (
 		<Container>
 			<span style={{color: '#5ef766'}}>➜ </span>
-			<span style={{color: '#5ef8fa'}}>~ </span>
-			yarn create video
+			<span style={{color: '#5ef8fa'}}>~ </span> yarn create video
 		</Container>
 	);
 };
