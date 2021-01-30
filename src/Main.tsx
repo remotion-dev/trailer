@@ -27,7 +27,7 @@ import {WebTechnologies} from './WebTechnologies';
 
 export const Main: React.FC = () => {
 	const frame = useCurrentFrame();
-	const voiceover = require('./voiceover.wav');
+	const voiceover = require('./voiceover-with-audio.wav');
 
 	return (
 		<div style={{flex: 1, backgroundColor: 'white'}}>
