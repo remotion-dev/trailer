@@ -1,6 +1,8 @@
+import 'hack-font/build/web/hack.css';
 import Highlight, {defaultProps} from 'prism-react-renderer';
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
+import './prism.css';
 
 const Pre = styled.pre`
 	text-align: left;
@@ -75,8 +77,6 @@ export const CodeFrame: React.FC<{
 	timing: Timing[];
 	title: string;
 }> = ({code, timing, title}) => {
-	require('hack-font/build/web/hack.css');
-	require('./prism.css');
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 

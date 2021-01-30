@@ -1,6 +1,7 @@
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
 import {Terminal} from './Terminal';
+import fileicon from './videothumbnail.png';
 
 const Container = styled.div`
 	background-color: white;
@@ -11,7 +12,6 @@ const Container = styled.div`
 export const TerminalRender: React.FC = () => {
 	const {width, height, fps} = useVideoConfig();
 	const frame = useCurrentFrame();
-	const fileicon = require('./videothumbnail.png');
 	const progress = spring({
 		fps,
 		frame,

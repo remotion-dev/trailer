@@ -1,3 +1,4 @@
+import 'hack-font/build/web/hack.css';
 import {interpolate, useCurrentFrame} from 'remotion';
 import styled from 'styled-components';
 
@@ -19,7 +20,6 @@ const Container = styled.div`
 const command = 'npm run build';
 
 export const Terminal: React.FC = () => {
-	require('hack-font/build/web/hack.css');
 	const frame = useCurrentFrame();
 	const npmStart = command.length + 2;
 	const renderStart = npmStart + 3;
