@@ -1,6 +1,10 @@
 import React from 'react';
-import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
-import {AbsContainer} from './AbsContainer';
+import {
+	AbsoluteFill,
+	interpolate,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 
 export const FadeTransition: React.FC<{
 	type: 'in' | 'out';
@@ -28,12 +32,12 @@ export const FadeTransition: React.FC<{
 			  );
 
 	return (
-		<AbsContainer
+		<AbsoluteFill
 			style={{
 				opacity: progress,
 			}}
 		>
 			{children}
-		</AbsContainer>
+		</AbsoluteFill>
 	);
 };

@@ -1,6 +1,11 @@
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {AbsContainer} from './AbsContainer';
+import {
+	AbsoluteFill,
+	interpolate,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 
 export const Transition: React.FC<{
 	type: 'in' | 'out';
@@ -23,12 +28,12 @@ export const Transition: React.FC<{
 	]);
 
 	return (
-		<AbsContainer
+		<AbsoluteFill
 			style={{
 				transform: `translateX(${type === 'in' ? percent : 0 - percent}%)`,
 			}}
 		>
 			{children}
-		</AbsContainer>
+		</AbsoluteFill>
 	);
 };

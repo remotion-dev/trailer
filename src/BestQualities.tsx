@@ -1,10 +1,9 @@
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
-import {AbsContainer} from './AbsContainer';
 import {Feature} from './Qualities';
 import remotionLogo from './remotion-logo.png';
 
-const Container = styled(AbsContainer)`
+const Container = styled(AbsoluteFill)`
 	background-color: white;
 	flex-direction: row;
 	justify-content: center;
@@ -99,7 +98,7 @@ export const BestQualities: React.FC = () => {
 					})}
 				</Right>
 			</Row>
-			<AbsContainer style={{justifyContent: 'center', alignItems: 'center'}}>
+			<AbsoluteFill style={{justifyContent: 'center', alignItems: 'center'}}>
 				<img
 					src={remotionLogo}
 					style={{
@@ -108,7 +107,7 @@ export const BestQualities: React.FC = () => {
 						transform: `scale(${logoProgress})`,
 					}}
 				/>
-			</AbsContainer>
+			</AbsoluteFill>
 		</Container>
 	);
 };

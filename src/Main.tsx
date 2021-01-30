@@ -1,5 +1,4 @@
-import {Audio, Sequence, useCurrentFrame} from 'remotion';
-import {AbsContainer} from './AbsContainer';
+import {AbsoluteFill, Audio, Sequence, useCurrentFrame} from 'remotion';
 import {BestQualities} from './BestQualities';
 import {Blue} from './Blue';
 import {CodeFrame} from './CodeFrame';
@@ -60,16 +59,16 @@ export const Main: React.FC = () => {
 				</Sequence>
 				<Sequence from={440} durationInFrames={58}>
 					<Transition type="out">
-						<AbsContainer>
+						<AbsoluteFill>
 							<Howto />
-						</AbsContainer>
+						</AbsoluteFill>
 					</Transition>
 				</Sequence>
 				<Sequence from={490} durationInFrames={170}>
 					<Transition type="in">
-						<AbsContainer style={{overflow: 'hidden'}}>
+						<AbsoluteFill style={{overflow: 'hidden'}}>
 							<Logo />
-						</AbsContainer>
+						</AbsoluteFill>
 					</Transition>
 				</Sequence>
 				<Sequence from={660} durationInFrames={190}>

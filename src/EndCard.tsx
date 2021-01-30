@@ -1,17 +1,16 @@
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
-import {AbsContainer} from './AbsContainer';
 import {EndCardRepo} from './EndCardRepo';
 import {EndCardWebsite} from './EndCardWebsite';
 import {EndCardYarn} from './EndCardYarn';
 import {GlowingStroke} from './GlowingStroke';
 
-const Outer = styled(AbsContainer)`
+const Outer = styled(AbsoluteFill)`
 	background-color: white;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 `;
 
-const Container = styled(AbsContainer)`
+const Container = styled(AbsoluteFill)`
 	background-color: rgba(0, 0, 0, 0.04);
 
 	flex-direction: row;
@@ -41,7 +40,7 @@ const Panel = styled.div`
 	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.07);
 `;
 
-const Centered = styled(AbsContainer)`
+const Centered = styled(AbsoluteFill)`
 	justify-content: center;
 	align-items: center;
 `;

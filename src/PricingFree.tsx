@@ -1,8 +1,13 @@
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {
+	AbsoluteFill,
+	interpolate,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 import styled from 'styled-components';
-import {AbsContainer} from './AbsContainer';
 
-const Container = styled(AbsContainer)`
+const Container = styled(AbsoluteFill)`
 	text-align: center;
 	justify-content: center;
 	align-items: center;

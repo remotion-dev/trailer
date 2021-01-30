@@ -1,7 +1,12 @@
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {
+	AbsoluteFill,
+	interpolate,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 import styled from 'styled-components';
-import {AbsContainer} from './AbsContainer';
 import {PricingFree} from './PricingFree';
 import {PricingRight} from './PricingRight';
 
@@ -35,17 +40,17 @@ export const Pricing: React.FC = () => {
 
 	return (
 		<Container>
-			<AbsContainer style={{transform: `translateX(${freeTranslateX}px)`}}>
+			<AbsoluteFill style={{transform: `translateX(${freeTranslateX}px)`}}>
 				<PricingFree />
-			</AbsContainer>
-			<AbsContainer
+			</AbsoluteFill>
+			<AbsoluteFill
 				style={{
 					transform: `translateX(${rightTranslateX}px)`,
 					opacity: rightOpacity,
 				}}
 			>
 				<PricingRight />
-			</AbsContainer>
+			</AbsoluteFill>
 		</Container>
 	);
 };

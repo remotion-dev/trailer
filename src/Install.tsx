@@ -1,10 +1,15 @@
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {
+	AbsoluteFill,
+	interpolate,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 import styled from 'styled-components';
-import {AbsContainer} from './AbsContainer';
 import {InstallFrame} from './InstallFrame';
 import {ExcalidrawYesThisWorks} from './YesThisWorks';
 
-const Container = styled(AbsContainer)`
+const Container = styled(AbsoluteFill)`
 	background-color: white;
 	justify-content: center;
 	align-items: center;

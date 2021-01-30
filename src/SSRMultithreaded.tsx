@@ -1,8 +1,8 @@
+import {AbsoluteFill} from 'remotion';
 import styled from 'styled-components';
-import {AbsContainer} from './AbsContainer';
 import {DockerIcon, Feature, GithubIcon, NodeIcon} from './Feature';
 
-const Container = styled(AbsContainer)`
+const Container = styled(AbsoluteFill)`
 	background-color: white;
 	justify-content: center;
 	align-items: center;

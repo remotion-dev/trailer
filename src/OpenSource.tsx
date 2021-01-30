@@ -1,5 +1,5 @@
+import {AbsoluteFill} from 'remotion';
 import styled from 'styled-components';
-import {AbsContainer} from './AbsContainer';
 
 const Title = styled.div`
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -44,7 +44,7 @@ const GithubIcon: React.FC = () => {
 	);
 };
 
-const Container = styled(AbsContainer)`
+const Container = styled(AbsoluteFill)`
 	background-color: white;
 	justify-content: center;
 `;
