@@ -30,7 +30,10 @@ const Text = styled.span`
 	font-weight: 700;
 `;
 
-export const Intro: React.FC<{offset: number}> = ({offset}) => {
+export const Intro: React.FC<{offset: number; showText: boolean}> = ({
+	offset,
+	showText,
+}) => {
 	const frame = useCurrentFrame();
 	const {fps, width, height, durationInFrames} = useVideoConfig();
 	const scaleProgress = spring({
@@ -61,7 +64,7 @@ export const Intro: React.FC<{offset: number}> = ({offset}) => {
 	const offset1 = interpolate(spring1, [0, 1], [800, 0]);
 	const offset2 = interpolate(spring2, [0, 1], [800, 0]);
 
-	const text = (
+	const text = showText ? (
 		<>
 			<div style={{transform: `translateY(${offset1}px)`}}>
 				<Text>This </Text>
@@ -74,7 +77,7 @@ export const Intro: React.FC<{offset: number}> = ({offset}) => {
 				<Text>React</Text>
 			</div>
 		</>
-	);
+	) : null;
 
 	const arcs = (
 		<>

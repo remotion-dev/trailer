@@ -25,11 +25,16 @@ const Title = styled.div`
 `;
 
 const scaleStart = 45;
-const textStart = 85;
 
-export const Logo: React.FC = () => {
+export const Logo: React.FC<{
+	showText: boolean;
+	offset: number;
+	textStartOffset: number;
+}> = ({showText, offset, textStartOffset}) => {
+	const textStart = 85 + textStartOffset;
 	const {fps, width, height} = useVideoConfig();
-	const frame = useCurrentFrame();
+	const currentFrame = useCurrentFrame();
+	const frame = currentFrame - offset;
 	const blueOpacity = interpolate(frame, [0, 5], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
@@ -102,17 +107,19 @@ export const Logo: React.FC = () => {
 				<Triangle scale={scale(1)} size={900 / 2} opacity={blueOpacity * 0.4} />
 				<Triangle scale={scale(0)} size={700 / 2} opacity={blueOpacity * 1} />
 			</div>
-			<div
-				style={{
-					position: 'absolute',
-					justifyContent: 'center',
-					alignItems: 'center',
-					flex: 1,
-					opacity: textOpacity,
-				}}
-			>
-				<Introducing>Introducing</Introducing>
-			</div>
+			{showText ? (
+				<div
+					style={{
+						position: 'absolute',
+						justifyContent: 'center',
+						alignItems: 'center',
+						flex: 1,
+						opacity: textOpacity,
+					}}
+				>
+					<Introducing>Introducing</Introducing>
+				</div>
+			) : null}
 		</Outer>
 	);
 };

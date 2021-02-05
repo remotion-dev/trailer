@@ -10,9 +10,10 @@ const Outer = styled(AbsoluteFill)`
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 `;
 
-const Container = styled(AbsoluteFill)`
+const Container = styled.div`
 	background-color: rgba(0, 0, 0, 0.04);
-
+	display: flex;
+	flex: 1;
 	flex-direction: row;
 	padding: 40px;
 `;

@@ -33,7 +33,7 @@ export const Main: React.FC = () => {
 			<div>
 				<Sequence from={0} durationInFrames={120 + 8}>
 					<Transition type="out">
-						<Intro offset={0} />
+						<Intro showText offset={0} />
 					</Transition>
 				</Sequence>
 				<Sequence from={120} durationInFrames={60}>
@@ -55,7 +55,7 @@ export const Main: React.FC = () => {
 					</Transition>
 				</Sequence>
 				<Sequence from={350} durationInFrames={90}>
-					<Intro offset={-40} />
+					<Intro showText offset={-40} />
 				</Sequence>
 				<Sequence from={440} durationInFrames={58}>
 					<Transition type="out">
@@ -67,12 +67,13 @@ export const Main: React.FC = () => {
 				<Sequence from={490} durationInFrames={170}>
 					<Transition type="in">
 						<AbsoluteFill style={{overflow: 'hidden'}}>
-							<Logo />
+							<Logo showText offset={0} textStartOffset={0} />
 						</AbsoluteFill>
 					</Transition>
 				</Sequence>
 				<Sequence from={660} durationInFrames={190}>
 					<CodeFrame
+						width={1200}
 						title="Video.tsx"
 						code={`
 export const RemotionVideo = () => {
@@ -111,6 +112,7 @@ export const RemotionVideo = () => {
 				</Sequence>
 				<Sequence from={850} durationInFrames={240}>
 					<CodeFrame
+						width={1200}
 						title="MyVideo.tsx"
 						code={`
 export const MyVideo = () => {

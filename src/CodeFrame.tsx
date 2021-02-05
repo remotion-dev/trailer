@@ -4,11 +4,13 @@ import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
 import './prism.css';
 
-const Pre = styled.pre`
+const Pre = styled.pre<{
+	width: number;
+}>`
 	text-align: left;
 	margin: 1em 0;
 	font-size: 40px;
-	width: 1200px;
+	width: ${(props) => props.width}px;
 `;
 
 const Line = styled.div`
@@ -20,7 +22,6 @@ const LineContent = styled.span`
 `;
 
 const Container = styled.div`
-	background-color: white;
 	flex: 1;
 	justify-content: center;
 	align-items: center;
@@ -30,6 +31,8 @@ const Container = styled.div`
 const Frame = styled.div`
 	border: 2px solid rgba(0, 0, 0, 0.14);
 	border-radius: 20px;
+	background-color: white;
+
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `;
@@ -76,7 +79,8 @@ export const CodeFrame: React.FC<{
 	code: string;
 	timing: Timing[];
 	title: string;
-}> = ({code, timing, title}) => {
+	width: number;
+}> = ({code, timing, title, width}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
@@ -92,7 +96,7 @@ export const CodeFrame: React.FC<{
 						language="tsx"
 					>
 						{({className, style, tokens, getLineProps, getTokenProps}) => (
-							<Pre className={className} style={style}>
+							<Pre width={width} className={className} style={style}>
 								{tokens.map((line, i) => {
 									return (
 										<Line

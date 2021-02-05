@@ -18,6 +18,7 @@ import {PullRequest} from './PullRequest';
 import {RemotionPlayerDemo} from './RemotionPlayerDemo';
 import {Ssr} from './SSRMultithreaded';
 import {TerminalRender} from './TerminalRender';
+import {Trailer} from './Trailer';
 import {Website} from './Website';
 import {WebTechnologies} from './WebTechnologies';
 
@@ -52,6 +53,7 @@ export const RemotionVideo: React.FC = () => {
 				width={1920}
 				height={1080}
 				defaultProps={{
+					width: 1200,
 					code: `
 export const RemotionVideo = () => {
 	return (
@@ -107,6 +109,11 @@ export const RemotionVideo = () => {
 				fps={30}
 				durationInFrames={6 * 30}
 				id="Logo"
+				defaultProps={{
+					showText: true,
+					textStartOffset: 0,
+					offset: 0,
+				}}
 			/>
 			<Composition
 				component={GoToGithub}
@@ -219,6 +226,15 @@ export const RemotionVideo = () => {
 				fps={30}
 				durationInFrames={2 * 30}
 				id="EndCard"
+			/>
+
+			<Composition
+				component={Trailer}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={315}
+				id="Trailer"
 			/>
 		</>
 	);
