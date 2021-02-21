@@ -35,7 +35,10 @@ app.get('/', async (req, res) => {
 			sendFile(cache.get(JSON.stringify(req.query)) as string);
 			return;
 		}
-		const bundled = await bundle(path.join(__dirname, './src/index.tsx'));
+		const bundled = await bundle(
+			path.join(__dirname, './src/index.tsx'),
+			() => void 0
+		);
 		const comps = await getCompositions(bundled);
 		const video = comps.find((c) => c.id === compositionId);
 		if (!video) {
