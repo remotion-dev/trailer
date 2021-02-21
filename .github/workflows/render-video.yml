@@ -18,8 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - uses: actions/setup-node@main
-      - run: sudo apt update
-      - run: sudo apt install ffmpeg
+      - run: brew install ffmpeg
       - run: npm i
       - run: npm run build -- --props="$WORKFLOW_INPUT"
         env:
