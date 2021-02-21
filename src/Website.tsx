@@ -1,4 +1,4 @@
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill, Img} from 'remotion';
 import styled from 'styled-components';
 import remotionWebsite from './remotion-website.png';
 
@@ -24,7 +24,7 @@ export const Website: React.FC = () => {
 			<Subtitle>www.remotion.dev</Subtitle>
 			<br />
 			<br />
-			<img src={remotionWebsite} style={{width: 1400}} />
+			<Img src={remotionWebsite} style={{width: 1400}} />
 		</Container>
 	);
 };

@@ -1,4 +1,10 @@
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {
+	Img,
+	interpolate,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 import styled from 'styled-components';
 import {Inspect} from './Inspect';
 import inspectandrefactor from './inspect-and-refactor.png';
@@ -42,7 +48,7 @@ export const InspectAndRefactor: React.FC = () => {
 				<Inspect />
 			</div>
 			<div style={{position: 'absolute', zIndex: 1}}>
-				<img
+				<Img
 					src={inspectandrefactor}
 					style={{width: 1400, transform: `translateY(${translateY}px)`}}
 				/>

@@ -1,4 +1,10 @@
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {
+	Img,
+	interpolate,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 import styled from 'styled-components';
 import {Terminal} from './Terminal';
 import fileicon from './videothumbnail.png';
@@ -42,7 +48,7 @@ export const TerminalRender: React.FC = () => {
 			>
 				<Terminal />
 			</div>
-			<img
+			<Img
 				src={fileicon}
 				style={{
 					width: 260,

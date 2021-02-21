@@ -1,4 +1,4 @@
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {Img, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
 import pullRequest from './pull-request.png';
 
@@ -10,7 +10,7 @@ const Container = styled.div`
 	align-items: center;
 `;
 
-const Img = styled.img`
+const Image = styled(Img)`
 	width: 1300px;
 `;
 
@@ -27,7 +27,7 @@ export const PullRequest: React.FC = () => {
 
 	return (
 		<Container>
-			<Img
+			<Image
 				style={{
 					transform: `scale(${scale})`,
 				}}

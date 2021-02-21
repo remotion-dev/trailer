@@ -1,4 +1,10 @@
-import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {
+	AbsoluteFill,
+	Img,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 import styled from 'styled-components';
 import {Feature} from './Qualities';
 import remotionLogo from './remotion-logo.png';
@@ -99,7 +105,7 @@ export const BestQualities: React.FC = () => {
 				</Right>
 			</Row>
 			<AbsoluteFill style={{justifyContent: 'center', alignItems: 'center'}}>
-				<img
+				<Img
 					src={remotionLogo}
 					style={{
 						height: 400,

@@ -1,4 +1,10 @@
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {
+	Img,
+	interpolate,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 import styled from 'styled-components';
 import github from './inspect.png';
 
@@ -10,7 +16,7 @@ const Container = styled.div`
 	align-items: center;
 `;
 
-const Img = styled.img`
+const Image = styled(Img)`
 	width: 1300px;
 `;
 
@@ -32,7 +38,7 @@ export const Inspect: React.FC = () => {
 
 	return (
 		<Container>
-			<Img
+			<Image
 				style={{
 					transform: `scale(${scale}) translateY(${translateY}px) translateX(${translateX}px)`,
 				}}
