@@ -21,7 +21,7 @@ import {RemotionPlayerDemo} from './RemotionPlayerDemo';
 import {Ssr} from './SSRMultithreaded';
 import {TerminalRender} from './TerminalRender';
 import {Transition} from './Transition';
-import voiceover from './voiceover-with-audio.wav';
+import voiceover from './voiceover-no-music.mp3';
 import {Website} from './Website';
 import {WebTechnologies} from './WebTechnologies';
 
