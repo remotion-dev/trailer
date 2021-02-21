@@ -14,7 +14,7 @@ name: Render video
 jobs:
   render:
     name: Render video
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@main
       - uses: actions/setup-node@main
@@ -24,7 +24,8 @@ jobs:
       - run: npm run build -- --props="$WORKFLOW_INPUT"
         env:
           WORKFLOW_INPUT: ${{ toJson(github.event.inputs) }}
+      - run: ffmpeg -y -i out.mp4 -i src/voiceover-no-music.mp3 -c:v copy -c:a aac trailer.mp4
       - uses: actions/upload-artifact@v2
         with:
-          name: out.mp4
-          path: out.mp4
+          name: trailer.mp4
+          path: trailer.mp4
