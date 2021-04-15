@@ -40,9 +40,8 @@ export const InspectAndRefactor: React.FC = () => {
 		<Container>
 			<div
 				style={{
-					transform: `scale(${scale}) translateY(${browserY}px)`,
+					transform: ` translateY(${browserY}px)`,
 					position: 'absolute',
-					opacity: browserOpacity,
 				}}
 			>
 				<Inspect />

@@ -32,6 +32,7 @@ export const PullRequest: React.FC = () => {
 					transform: `scale(${scale})`,
 				}}
 				src={pullRequest}
+				onLoad={() => console.log('loaded')}
 			/>
 		</Container>
 	);

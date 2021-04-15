@@ -35,10 +35,7 @@ app.get('/', async (req, res) => {
 			sendFile(cache.get(JSON.stringify(req.query)) as string);
 			return;
 		}
-		const bundled = await bundle(
-			path.join(__dirname, './src/index.tsx'),
-			() => void 0
-		);
+		const bundled = await bundle(path.join(__dirname, './src/index.tsx'));
 		const comps = await getCompositions(bundled);
 		const video = comps.find((c) => c.id === compositionId);
 		if (!video) {
@@ -49,7 +46,7 @@ app.get('/', async (req, res) => {
 		const tmpDir = await fs.promises.mkdtemp(
 			path.join(os.tmpdir(), 'remotion-')
 		);
-		await renderFrames({
+		const {assetsInfo} = await renderFrames({
 			config: video,
 			webpackBundle: bundled,
 			onStart: () => console.log('Rendering frames...'),
@@ -60,11 +57,12 @@ app.get('/', async (req, res) => {
 			},
 			parallelism: null,
 			outputDir: tmpDir,
-			userProps: req.query,
+			inputProps: req.query,
 			compositionId,
+			imageFormat: 'jpeg',
 		});
 
-		const finalOutput = path.join(tmpDir, `out.mp4`);
+		const finalOutput = path.join(tmpDir, 'out.mp4');
 		await stitchFramesToVideo({
 			dir: tmpDir,
 			force: true,
@@ -72,6 +70,8 @@ app.get('/', async (req, res) => {
 			height: video.height,
 			width: video.width,
 			outputLocation: finalOutput,
+			imageFormat: 'jpeg',
+			assetsInfo,
 		});
 		cache.set(JSON.stringify(req.query), finalOutput);
 		sendFile(finalOutput);
@@ -89,9 +89,9 @@ app.listen(port);
 console.log(
 	[
 		`The server has started on http://localhost:${port}!`,
-		`You can render a video by passing props as URL parameters.`,
+		'You can render a video by passing props as URL parameters.',
 		'',
-		`If you are running Hello World, try this:`,
+		'If you are running Hello World, try this:',
 		'',
 		`http://localhost:${port}?titleText=Hello,+World!&titleColor=red`,
 		'',

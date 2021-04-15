@@ -16,10 +16,6 @@ const Container = styled.div`
 	align-items: center;
 `;
 
-const Image = styled(Img)`
-	width: 1300px;
-`;
-
 export const Inspect: React.FC = () => {
 	const {fps} = useVideoConfig();
 	const frame = useCurrentFrame();
@@ -38,7 +34,7 @@ export const Inspect: React.FC = () => {
 
 	return (
 		<Container>
-			<Image
+			<Img
 				style={{
 					transform: `scale(${scale}) translateY(${translateY}px) translateX(${translateX}px)`,
 				}}

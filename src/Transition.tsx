@@ -22,10 +22,11 @@ export const Transition: React.FC<{
 		frame: type === 'in' ? frame : Math.max(0, frame - firstFrame),
 	});
 
-	const percent = interpolate(progress, type === 'in' ? [1, 0] : [0, 1], [
-		0,
-		100,
-	]);
+	const percent = interpolate(
+		progress,
+		[0, 1],
+		type === 'in' ? [100, 0] : [0, 100]
+	);
 
 	return (
 		<AbsoluteFill
