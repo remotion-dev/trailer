@@ -13,6 +13,7 @@
 	"repository": {},
 	"license": "UNLICENSED",
 	"dependencies": {
+		"@remotion/bundler": "^2.0.0",
 		"@remotion/cli": "^2.0.0",
 		"@remotion/eslint-config": "^2.0.0",
 		"@remotion/renderer": "^2.0.0",
