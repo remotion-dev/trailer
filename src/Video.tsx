@@ -101,6 +101,10 @@ export const RemotionVideo = () => {
 				height={1080}
 				fps={30}
 				durationInFrames={4 * 30}
+				defaultProps={{
+					offset: 0,
+					showText: true,
+				}}
 			/>
 			<Composition
 				component={Logo}
