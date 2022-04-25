@@ -9,6 +9,7 @@ import {
 export const FadeTransition: React.FC<{
 	type: 'in' | 'out';
 	duration: number;
+	children: React.ReactNode;
 }> = ({type, children, duration}) => {
 	const frame = useCurrentFrame();
 	const videoConfig = useVideoConfig();

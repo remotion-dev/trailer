@@ -42,12 +42,13 @@ export const Feature: React.FC<{
 	title: boolean;
 	color1: string;
 	color2: string;
+	children: React.ReactNode;
 }> = ({children, index, title, fadeOutIndex, x, color1, color2}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const progress = spring({
 		fps,
-		frame: frame - index * 1,
+		frame: frame - Number(index),
 		config: {
 			damping: 200,
 		},

@@ -47,7 +47,7 @@ const CoreContainer: React.FC<{
 	const offset = x * 4 + y;
 	const progress = spring({
 		fps,
-		frame: frame - offset * 1,
+		frame: frame - Number(offset),
 	});
 	return <Core style={{transform: `scale(${progress})`}} x={x} y={y} />;
 };

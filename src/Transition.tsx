@@ -9,6 +9,7 @@ import {
 
 export const Transition: React.FC<{
 	type: 'in' | 'out';
+	children: React.ReactNode;
 }> = ({type, children}) => {
 	const frame = useCurrentFrame();
 	const videoConfig = useVideoConfig();

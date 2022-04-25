@@ -31,10 +31,8 @@ export const InspectAndRefactor: React.FC = () => {
 		},
 	});
 
-	const scale = interpolate(progress, [0, 1], [1, 0.8]);
 	const browserY = interpolate(progress, [0, 1], [0, -150]);
 	const translateY = interpolate(progress, [0, 1], [1500, 0]);
-	const browserOpacity = interpolate(progress, [0, 1], [1, 0.5]);
 
 	return (
 		<Container>

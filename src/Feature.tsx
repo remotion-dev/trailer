@@ -1,3 +1,4 @@
+import React from 'react';
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import styled from 'styled-components';
 
@@ -44,7 +45,10 @@ const IconContainer = styled.div`
 	margin-right: 40px;
 `;
 
-const Thing: React.FC<{index: number}> = ({children, index}) => {
+const Thing: React.FC<{index: number; children: React.ReactNode}> = ({
+	children,
+	index,
+}) => {
 	const {fps} = useVideoConfig();
 	const frame = useCurrentFrame();
 	const progress = spring({

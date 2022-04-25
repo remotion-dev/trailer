@@ -105,7 +105,11 @@ export const Logo: React.FC<{
 					opacity={blueOpacity * 0.2}
 				/>
 				<Triangle scale={scale(1)} size={900 / 2} opacity={blueOpacity * 0.4} />
-				<Triangle scale={scale(0)} size={700 / 2} opacity={blueOpacity * 1} />
+				<Triangle
+					scale={scale(0)}
+					size={700 / 2}
+					opacity={Number(blueOpacity)}
+				/>
 			</div>
 			{showText ? (
 				<div
