@@ -34,11 +34,11 @@ export const EndCardRepo: React.FC = () => {
 			<a
 				// You can actually click a link in a video.
 				// Isn't this hilarious?
-				href="https://github.com/JonnyBurger/remotion-trailer"
+				href="https://github.com/remotion-dev/trailer"
 				target="_blank"
 				style={{textDecoration: 'none'}}
 			>
-				<Link>github.com/JonnyBurger/remotion-trailer</Link>
+				<Link>github.com/remotion-dev/trailer</Link>
 			</a>
 		</Container>
 	);

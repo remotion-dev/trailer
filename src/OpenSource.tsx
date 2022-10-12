@@ -52,11 +52,11 @@ const Container = styled(AbsoluteFill)`
 export const OpenSource: React.FC = () => {
 	return (
 		<Container>
-			<Title>Open source</Title>
+			<Title>Source-available</Title>
 			<div style={{height: 40}} />
 			<Subtitle>
 				<GithubIcon /> <div style={{width: 15}} />
-				JonnyBurger/remotion
+				remotion-dev/remotion
 			</Subtitle>
 		</Container>
 	);
