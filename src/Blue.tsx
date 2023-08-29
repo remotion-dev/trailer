@@ -10,3 +10,20 @@ export const Blue: React.FC = () => {
 		/>
 	);
 };
+const Outer = styled(AbsoluteFill)`
+	background-color: white;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+`;
+
+const Container = styled.div`
+	background-color: rgba(0, 0, 0, 0.04);
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	padding: 40px;
+`;
+
+const Left = styled.div`
+	flex: 1;
+	display: flex;
+`;
