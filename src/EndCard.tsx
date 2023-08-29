@@ -23,6 +23,79 @@ const Left = styled.div`
 	display: flex;
 `;
 
+export const BestQualities: React.FC = () => {
+	const frame = useCurrentFrame();
+	const {fps} = useVideoConfig();
+
+	const logoProgress = spring({
+		frame: frame - 180,
+		fps,
+		config: {
+			damping: 200,
+		},
+	});
+
+	return (
+		<Container>
+			<Row>
+				<Left>
+					{programmingFeatures.map((f, index) => {
+						return (
+							<Feature
+								color1="#f5ad43"
+								color2="#fd764a"
+								title={index === 0}
+								x={500}
+								index={index + 40}
+								fadeOutIndex={index * 0.66}
+							>
+								{f}
+							</Feature>
+						);
+					})}
+				</Left>
+				<Spacer />
+				<Right>
+					{[
+						'Video editing\nfeatures',
+						'Visual Preview',
+						'Timeline Scrubbing',
+						'Video footage export',
+						'Animation primitives',
+						'Composition primitives',
+						'Layers',
+						'Dynamic FPS',
+						'Audio support (Alpha)',
+						'MP4 export',
+					].map((f, index) => {
+						return (
+							<Feature
+								color1="#5757f5"
+								color2="#00005b"
+								title={index === 0}
+								x={-500}
+								index={index + programmingFeatures.length + 80}
+								fadeOutIndex={index * 0.66}
+							>
+								{f}
+							</Feature>
+						);
+					})}
+				</Right>
+			</Row>
+			<AbsoluteFill style={{justifyContent: 'center', alignItems: 'center'}}>
+				<Img
+					src={remotionLogo}
+					style={{
+						height: 400,
+						width: 400,
+						transform: `scale(${logoProgress})`,
+					}}
+				/>
+			</AbsoluteFill>
+		</Container>
+	);
+
 const Right = styled.div`
 	flex: 1;
 	display: flex;
